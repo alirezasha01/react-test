@@ -1,9 +1,11 @@
 import React from "react";
 
-let n = 15;
-const Product = () =>{
+const Product = (props) =>{
     return(
-        <div>{n-2} Hello</div>
+        <div>
+            <p>{props.title}</p>
+            <p>{props.price}</p>
+        </div>
     )
 };
 
