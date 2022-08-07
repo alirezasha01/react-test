@@ -5,7 +5,6 @@ const Product = (props) =>{
         <div>
             <p>{props.title}</p>
             <p>{props.price}</p>
-            <p>{props.children}</p>
         </div>
     )
 };
