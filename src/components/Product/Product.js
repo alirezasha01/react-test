@@ -5,7 +5,7 @@ const Product = (props) =>{
     return(
         <div className="product">
             <p>{props.title}</p>
-            <p>{props.price}</p>
+            <p onClick={props.click}>{props.price}</p>
         </div>
     )
 };
