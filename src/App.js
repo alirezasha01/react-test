@@ -55,6 +55,7 @@ ChangeValue = (newValue) =>{
         ],
     })
 }
+
     render(){
     return (
             <div className="center">
