@@ -45,7 +45,7 @@ class App extends React.Component {
             {title : "book2", price : 80},
             {title : "book3", price : 70},
         ],
-}
+};
 ChangeValue = (event) =>{
     this.setState({
         products: [
@@ -54,8 +54,14 @@ ChangeValue = (event) =>{
             {title : event.target.value, price : 30},
         ],
     })
-}
+};
     render(){
+        const btn = {
+            backgroundColor: "blue",
+            borderRadius: "3px",
+            padding: "3px",
+            margin:"3px auto"
+        };
     return (
             <div className="center">
             <h1>Book Shop</h1>
@@ -75,7 +81,7 @@ ChangeValue = (event) =>{
             change = {this.ChangeValue}
             />
             
-            <button onClick={this.ChangeValue}> click me!</button>
+            <button onClick={this.ChangeValue} style={btn}> click me!</button>
         </div>
     )
     }
