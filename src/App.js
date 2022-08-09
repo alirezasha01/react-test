@@ -71,7 +71,7 @@ ChangeValue = (newValue) =>{
             title = {this.state.products[2].title}
             price = {this.state.products[2].price}
             />
-            <button onClick={() => this.ChangeValue("alireza")}> click me!</button>
+            <button onClick={this.ChangeValue.bind(this,"alireza")}> click me!</button>
         </div>
     )
     }
