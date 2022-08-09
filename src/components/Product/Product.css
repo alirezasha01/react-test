@@ -1,0 +1,9 @@
+.product{
+    background:rgb(255, 255, 255);
+    width: 400px;
+    box-shadow:0 5px 0 5px #000 , 5px 0 5px 0 rgb(255, 0, 0) ;
+    margin: auto;
+    margin-bottom: 20px;
+    padding : 1rem;
+    border-radius: 5px;
+}

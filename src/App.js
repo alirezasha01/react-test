@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Product from "./components/Product/Product";
+import "./App.css"
 
 const App = () => {
     const [productState , setProductState] = useState({
@@ -19,7 +20,7 @@ const ChangeValue = () =>{
     })
 }
     return (
-            <div id="main" className="container">
+            <div className="center">
             <h1>React App</h1>
             <Product
             title = {productState.products[0].title}
