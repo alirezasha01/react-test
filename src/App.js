@@ -58,7 +58,7 @@ ChangeValue = (newValue) =>{
     render(){
     return (
             <div className="center">
-            <h1>React App</h1>
+            <h1>Book Shop</h1>
             <Product
             title = {this.state.products[0].title}
             price = {this.state.products[0].price}

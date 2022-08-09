@@ -1,7 +1,7 @@
 .product{
-    background:rgb(255, 255, 255);
+    background:rgb(91, 217, 245);
     width: 400px;
-    box-shadow:0 5px 0 5px #000 , 5px 0 5px 0 rgb(255, 0, 0) ;
+    box-shadow:2px 2px 2px 2px #000;
     margin: auto;
     margin-bottom: 20px;
     padding : 1rem;
