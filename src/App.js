@@ -57,9 +57,9 @@ ChangeValue = (event) =>{
 };
     render(){
         const btn = {
-            backgroundColor: "blue",
+            backgroundColor: "rgb(100,206,250)",
             borderRadius: "3px",
-            padding: "3px",
+            padding: "10px",
             margin:"3px auto"
         };
     return (
