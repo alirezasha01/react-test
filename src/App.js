@@ -46,12 +46,12 @@ class App extends React.Component {
             {title : "book3", price : 70},
         ],
 }
-ChangeValue = (newValue) =>{
+ChangeValue = (event) =>{
     this.setState({
         products: [
-            {title : newValue, price : 30},
-            {title : newValue, price : 30},
-            {title : newValue, price : 30},
+            {title : event.target.value, price : 30},
+            {title : event.target.value, price : 30},
+            {title : event.target.value, price : 30},
         ],
     })
 }
@@ -62,16 +62,20 @@ ChangeValue = (newValue) =>{
             <Product
             title = {this.state.products[0].title}
             price = {this.state.products[0].price}
+            change = {this.ChangeValue}
             />
             <Product
             title = {this.state.products[1].title}
             price = {this.state.products[1].price}
+            change = {this.ChangeValue}
             />
             <Product
             title = {this.state.products[2].title}
             price = {this.state.products[2].price}
+            change = {this.ChangeValue}
             />
-            <button onClick={this.ChangeValue.bind(this,"alireza")}> click me!</button>
+            
+            <button onClick={this.ChangeValue}> click me!</button>
         </div>
     )
     }
