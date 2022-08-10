@@ -46,6 +46,7 @@ class App extends React.Component {
             {title : "book2", price : 80},
             {title : "book3", price : 70},
         ],
+        showAndHide : false ,
 };
 ChangeValue = (event) =>{
     this.setState({
@@ -56,6 +57,12 @@ ChangeValue = (event) =>{
         ],
     })
 };
+changeTogleHandler = () =>{
+    const show = this.state.showAndHide;
+    this.setState({
+        showAndHide : !show
+    })
+}
     render(){
         const btn = {
             backgroundColor: "rgb(100,206,250)",
@@ -66,23 +73,23 @@ ChangeValue = (event) =>{
     return (
             <div className="center">
             <h1>Book Shop</h1>
+            <button onClick={this.changeTogleHandler} style={btn}>Show/Hide products</button>
+            {this.state.showAndHide ? (
+            <div>
             <Product
             title = {this.state.products[0].title}
             price = {this.state.products[0].price}
-            change = {this.ChangeValue}
             />
             <Product
             title = {this.state.products[1].title}
             price = {this.state.products[1].price}
-            change = {this.ChangeValue}
             />
             <Product
             title = {this.state.products[2].title}
             price = {this.state.products[2].price}
-            change = {this.ChangeValue}
             />
-            
-            <button onClick={this.ChangeValue} style={btn}> click me!</button>
+            </div> )
+             :null}
         </div>
     )
     }
