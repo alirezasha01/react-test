@@ -70,11 +70,11 @@ changeTogleHandler = () =>{
             padding: "10px",
             margin:"3px auto"
         };
-    return (
-            <div className="center">
-            <h1>Book Shop</h1>
-            <button onClick={this.changeTogleHandler} style={btn}>Show/Hide products</button>
-            {this.state.showAndHide ? (
+
+    let nullProduct = null;
+
+    if(this.state.showAndHide){
+        nullProduct = (
             <div>
             <Product
             title = {this.state.products[0].title}
@@ -88,9 +88,15 @@ changeTogleHandler = () =>{
             title = {this.state.products[2].title}
             price = {this.state.products[2].price}
             />
-            </div> )
-             :null}
-        </div>
+            </div>
+        )
+    }
+    return (
+            <div className="center">
+            <h1>Book Shop</h1>
+            <button onClick={this.changeTogleHandler} style={btn}>Show/Hide products</button>
+            {nullProduct}
+            </div>
     )
     }
  }
