@@ -1,12 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import Product from "./components/Product/Product";
 import "./App.css"
 class App extends React.Component {
     state = {
         products: [
-            {title : "book1", price : 50},
-            {title : "book2", price : 80},
-            {title : "book3", price : 70},
+            {id: 1 ,title : "book1", price : 50},
+            {id: 2 ,title : "book2", price : 80},
+            {id: 3 ,title : "book3", price : 70},
         ],
         showAndHide : false ,
 };
@@ -52,6 +52,7 @@ deleteStateHandler = (productIndex) => {
                 click = {() => this.deleteStateHandler(index)}
                 title={item.title}
                 price={item.price}
+                key = {index}              
                 />
             })
             }
@@ -59,11 +60,13 @@ deleteStateHandler = (productIndex) => {
         )
     }
     return (
+        <React.StrictMode>
             <div className="center">
             <h1>Book Shop</h1>
             <button onClick={this.changeTogleHandler} style={btn}>Show/Hide products</button>
             {nullProduct}
             </div>
+        </React.StrictMode>
     )
     }
  }
