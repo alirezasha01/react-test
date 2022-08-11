@@ -10,13 +10,20 @@ class App extends React.Component {
         ],
         showAndHide : false ,
 };
-ChangeValue = (event) =>{
+ChangeValue = (event , id) =>{
+    const productIndex = this.state.products.findIndex((item) =>{
+        return item.id === id
+    })
+
+    const product = {
+        ...this.state.products[productIndex]
+    }
+    product.title = event.target.value
+    const products = [...this.state.products]
+    products[productIndex] = product
+
     this.setState({
-        products: [
-            {title : event.target.value, price : 30},
-            {title : event.target.value, price : 30},
-            {title : event.target.value, price : 30},
-        ],
+        products:products
     })
 };
 changeTogleHandler = () =>{
@@ -52,6 +59,7 @@ deleteStateHandler = (productIndex) => {
                 click = {() => this.deleteStateHandler(index)}
                 title={item.title}
                 price={item.price}
+                change={(event) => this.ChangeValue(event , item.id)}
                 key = {index}              
                 />
             })

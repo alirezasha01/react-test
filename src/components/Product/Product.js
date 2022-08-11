@@ -6,7 +6,7 @@ const Product = (props) =>{
         <div className="product">
             <p onClick={props.click}>{props.title}</p>
             <p>{props.price}</p>
-            <input type="text"></input>
+            <input type="text" onChange={props.change} value={props.title}></input>
         </div>
     )
 };
