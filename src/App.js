@@ -58,7 +58,6 @@ deleteStateHandler = (productIndex) => {
              change={this.ChangeValue}
              />
              </div>
-             
         )
     }
     return (
