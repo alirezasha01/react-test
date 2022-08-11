@@ -1,5 +1,5 @@
 import React from "react";
-import Product from "./components/Product/Product";
+import ProductList from "./components/ProductList/ProductList";
 import "./App.css"
 class App extends React.Component {
     state = {
@@ -49,22 +49,15 @@ deleteStateHandler = (productIndex) => {
         };
 
     let nullProduct = null;
-
     if(this.state.showAndHide){
         nullProduct = (
             <div>
-            {
-                this.state.products.map((item , index)=>{
-                return <Product
-                click = {() => this.deleteStateHandler(index)}
-                title={item.title}
-                price={item.price}
-                change={(event) => this.ChangeValue(event , item.id)}
-                key = {index}              
-                />
-            })
-            }
-            </div>
+            <ProductList
+             products={this.state.products}
+             delete={this.deleteStateHandler}
+             change={this.ChangeValue}
+             />
+             </div>
         )
     }
     return (
