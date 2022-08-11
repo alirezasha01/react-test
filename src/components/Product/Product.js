@@ -4,9 +4,9 @@ import "./Product.css"
 const Product = (props) =>{
     return(
         <div className="product">
-            <p>{props.title}</p>
-            <p onClick={props.click}>{props.price}</p>
-            <input type="text" onChange={props.change}></input>
+            <p onClick={props.click}>{props.title}</p>
+            <p>{props.price}</p>
+            <input type="text"></input>
         </div>
     )
 };

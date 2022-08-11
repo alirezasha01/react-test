@@ -25,6 +25,14 @@ changeTogleHandler = () =>{
         showAndHide : !show
     })
 }
+deleteStateHandler = (productIndex) => {
+    const product = [...this.state.products]
+    product.splice(productIndex,1)
+    this.setState({
+        products : product
+    })
+
+}
     render(){
         const btn = {
             backgroundColor: "rgb(100,206,250)",
@@ -39,8 +47,12 @@ changeTogleHandler = () =>{
         nullProduct = (
             <div>
             {
-                this.state.products.map((item)=>{
-                return <Product title={item.title} price={item.price} />
+                this.state.products.map((item , index)=>{
+                return <Product
+                click = {() => this.deleteStateHandler(index)}
+                title={item.title}
+                price={item.price}
+                />
             })
             }
             </div>
