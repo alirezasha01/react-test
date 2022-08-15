@@ -3,6 +3,10 @@ import ProductList from "./components/ProductList/ProductList";
 import "./App.css"
 import Main from "./components/Main/Main";
 class App extends React.Component {
+    constructor(props){
+        super(props)
+        console.log("App.js constructor")
+    }
     state = {
         products: [
             {id: 1 ,title : "book1", price : 50},
@@ -41,8 +45,11 @@ deleteStateHandler = (productIndex) => {
     })
 
 }
+componentDidMount(){
+    console.log("componentDidMount")
+}
     render(){
-
+    console.log("App.js Render");
     let nullProduct = null;
     if(this.state.showAndHide){
         nullProduct = (

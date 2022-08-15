@@ -1,6 +1,7 @@
 import React from "react";
 
 const Main = (props) =>{
+    console.log("Main")
     const btn = {
         backgroundColor: "rgb(100,206,250)",
         borderRadius: "3px",
