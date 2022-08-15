@@ -1,7 +1,9 @@
-import React from "react";
+import React , { useEffect } from "react";
 
 const Main = (props) =>{
-    console.log("Main")
+    useEffect(()=>{
+        console.log("Main.js useEffect")
+    })
     const btn = {
         backgroundColor: "rgb(100,206,250)",
         borderRadius: "3px",
