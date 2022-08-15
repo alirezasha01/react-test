@@ -48,6 +48,9 @@ deleteStateHandler = (productIndex) => {
 componentDidMount(){
     console.log("componentDidMount")
 }
+componentWillUnmount(){
+    console.log("componentWillUnmount")
+}
     render(){
     console.log("App.js Render");
     let nullProduct = null;

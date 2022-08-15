@@ -13,6 +13,9 @@ class ProductList extends React.Component{
     componentDidUpdate(){
         console.log("componentDidUpdate")
     }
+    componentWillUnmount(){
+        console.log("componentWillUnmount")
+    }
         render(){
         return this.props.products.map((item , index)=>{
             return (
