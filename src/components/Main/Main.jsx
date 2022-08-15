@@ -2,8 +2,10 @@ import React , { useEffect } from "react";
 
 const Main = (props) =>{
     useEffect(()=>{
-        console.log("Main.js useEffect")
-    })
+        setTimeout(()=>{
+            alert("HTTP Request");
+        },2000)
+    },[props.products])
     const btn = {
         backgroundColor: "rgb(100,206,250)",
         borderRadius: "3px",

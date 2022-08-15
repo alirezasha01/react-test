@@ -65,7 +65,7 @@ componentDidMount(){
     }
     return (
         <>
-            <Main click={this.changeTogleHandler}>
+            <Main products={this.state.products} click={this.changeTogleHandler}>
                 {nullProduct}
             </Main>
         </>
