@@ -1,6 +1,7 @@
 import React from "react";
 import ProductList from "./components/ProductList/ProductList";
 import "./App.css"
+import Main from "./components/Main/Main";
 class App extends React.Component {
     state = {
         products: [
@@ -41,12 +42,6 @@ deleteStateHandler = (productIndex) => {
 
 }
     render(){
-        const btn = {
-            backgroundColor: "rgb(100,206,250)",
-            borderRadius: "3px",
-            padding: "10px",
-            margin:"3px auto"
-        };
 
     let nullProduct = null;
     if(this.state.showAndHide){
@@ -62,13 +57,11 @@ deleteStateHandler = (productIndex) => {
         )
     }
     return (
-        <React.StrictMode>
-            <div className="center">
-            <h1>Book Shop</h1>
-            <button onClick={this.changeTogleHandler} style={btn}>Show/Hide products</button>
-            {nullProduct}
-            </div>
-        </React.StrictMode>
+        <>
+            <Main click={this.changeTogleHandler}>
+                {nullProduct}
+            </Main>
+        </>
     )
     }
  }
