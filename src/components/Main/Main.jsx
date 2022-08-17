@@ -1,10 +1,9 @@
-import React , { useEffect } from "react";
+import React , { useEffect , useRef} from "react";
 
 const Main = (props) =>{
+    const btnRef = useRef(null)
     useEffect(()=>{
-        setTimeout(()=>{
-            alert("HTTP Request");
-        },2000)
+        btnRef.current.click()
         return(
             console.log("delete on useEffect")
         )
@@ -18,7 +17,7 @@ const Main = (props) =>{
     return(
             <div className="center">
             <h1>Book Shop</h1>
-            <button onClick={props.click} style={btn}>Show/Hide products</button>
+            <button ref={btnRef} onClick={props.click} style={btn}>Show/Hide products</button>
             {props.children}
             </div>
     )
