@@ -3,6 +3,7 @@ import ProductList from "./components/ProductList/ProductList";
 import "./App.css"
 import Main from "./components/Main/Main";
 import Wrapper from "./components/hoc/Wrapper"
+import Container  from "./components/hoc/Container";
 class App extends React.Component {
     constructor(props){
         super(props)
@@ -67,16 +68,16 @@ componentDidMount(){
         )
     }
     return (
-        <Wrapper value="center">
+        <Container>
         <button onClick={()=>{this.setState({ deleteEffect : false })}}>delete</button>
         {this.state.deleteEffect ? (
             <Main products={this.state.products} click={this.changeTogleHandler}>
                 {nullProduct}
             </Main>):null}
-        </Wrapper>
+        </Container>
     )
     }
  }
 
 
-export default App
+export default Wrapper(App,"center")
