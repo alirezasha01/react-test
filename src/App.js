@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import ProductList from "./components/ProductList/ProductList";
 import "./App.css"
 import Main from "./components/Main/Main";
+import Wrapper from "./components/hoc/Wrapper"
 class App extends React.Component {
     constructor(props){
         super(props)
@@ -66,13 +67,13 @@ componentDidMount(){
         )
     }
     return (
-        <div className="center">
+        <Wrapper value="center">
         <button onClick={()=>{this.setState({ deleteEffect : false })}}>delete</button>
         {this.state.deleteEffect ? (
             <Main products={this.state.products} click={this.changeTogleHandler}>
                 {nullProduct}
             </Main>):null}
-        </div>
+        </Wrapper>
     )
     }
  }
