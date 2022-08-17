@@ -5,7 +5,10 @@ const Main = (props) =>{
         setTimeout(()=>{
             alert("HTTP Request");
         },2000)
-    },[props.products])
+        return(
+            console.log("delete on useEffect")
+        )
+    },[])
     const btn = {
         backgroundColor: "rgb(100,206,250)",
         borderRadius: "3px",

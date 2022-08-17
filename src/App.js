@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import ProductList from "./components/ProductList/ProductList";
 import "./App.css"
 import Main from "./components/Main/Main";
@@ -14,6 +14,7 @@ class App extends React.Component {
             {id: 3 ,title : "book3", price : 70},
         ],
         showAndHide : false ,
+        deleteEffect : true
 };
 ChangeValue = (event , id) =>{
     const productIndex = this.state.products.findIndex((item) =>{
@@ -48,9 +49,7 @@ deleteStateHandler = (productIndex) => {
 componentDidMount(){
     console.log("componentDidMount")
 }
-componentWillUnmount(){
-    console.log("componentWillUnmount")
-}
+
     render(){
     console.log("App.js Render");
     let nullProduct = null;
@@ -67,11 +66,13 @@ componentWillUnmount(){
         )
     }
     return (
-        <>
+        <div className="center">
+        <button onClick={()=>{this.setState({ deleteEffect : false })}}>delete</button>
+        {this.state.deleteEffect ? (
             <Main products={this.state.products} click={this.changeTogleHandler}>
                 {nullProduct}
-            </Main>
-        </>
+            </Main>):null}
+        </div>
     )
     }
  }
