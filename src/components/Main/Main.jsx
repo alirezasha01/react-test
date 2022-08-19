@@ -1,8 +1,9 @@
-import React , { useEffect , useRef} from "react";
+import React , { useEffect , useRef , useContext} from "react";
 import Auth from "../../context/Auth";
 
 const Main = (props) =>{
     const btnRef = useRef(null)
+    const auth = useContext(Auth)
     useEffect(()=>{
         btnRef.current.click()
         return(
@@ -20,9 +21,7 @@ const Main = (props) =>{
             <h1>Book Shop</h1>
             <button ref={btnRef} onClick={props.click} style={btn}>Show/Hide products</button>
             {props.children}
-            <Auth.Consumer>
-            {(context)=><button style={btn} onClick={context.login}>Login</button>}
-            </Auth.Consumer>
+            <button style={btn} onClick={auth.login}>Login</button>
             </div>
     )
 };
