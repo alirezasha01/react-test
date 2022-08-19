@@ -8,6 +8,9 @@ class Product extends React.Component{
         super(props)
         this.inputRef = React.createRef()
     }
+
+    static contextType = Auth;
+
     componentDidMount(){
         this.inputRef.current.focus()
     }
@@ -15,9 +18,7 @@ class Product extends React.Component{
         console.log("Product")
         return(
             <Container>
-            <Auth.Consumer>
-            {(context)=>context.auth ? <p>logged in</p> : <p>please login</p>}
-            </Auth.Consumer>
+            {this.context.auth ? <p>logged in</p> : <p>please login</p>}
             <p key="2" onClick={this.props.click}>{this.props.title}</p>
             <p key="3">{this.props.price}</p>
             <input ref={this.inputRef} key="1" type="text" onChange={this.props.change} value={this.props.title}></input>
