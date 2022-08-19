@@ -24,7 +24,8 @@ class ProductList extends React.Component{
             title={item.title}
             price={item.price}
             change={(event) => this.props.change(event , item.id)}
-            key = {index}              
+            key = {index}
+            isAuth={this.props.isAuth}
             />
             )
        })

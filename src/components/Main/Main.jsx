@@ -19,6 +19,7 @@ const Main = (props) =>{
             <h1>Book Shop</h1>
             <button ref={btnRef} onClick={props.click} style={btn}>Show/Hide products</button>
             {props.children}
+            <button style={btn} onClick={props.login}>Login</button>
             </div>
     )
 };

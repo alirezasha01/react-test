@@ -16,7 +16,8 @@ class App extends React.Component {
             {id: 3 ,title : "book3", price : 70},
         ],
         showAndHide : false ,
-        deleteEffect : true
+        deleteEffect : true,
+        auth: false
 };
 ChangeValue = (event , id) =>{
     const productIndex = this.state.products.findIndex((item) =>{
@@ -52,6 +53,9 @@ componentDidMount(){
     console.log("componentDidMount")
 }
 
+loginHandler=()=>{
+    this.setState({ auth:true })
+}
     render(){
     console.log("App.js Render");
     let nullProduct = null;
@@ -62,6 +66,7 @@ componentDidMount(){
              products={this.state.products}
              delete={this.deleteStateHandler}
              change={this.ChangeValue}
+             isAuth={this.state.auth}
              />
              </div>
              
@@ -71,7 +76,11 @@ componentDidMount(){
         <Container>
         <button onClick={()=>{this.setState({ deleteEffect : false })}}>delete</button>
         {this.state.deleteEffect ? (
-            <Main products={this.state.products} click={this.changeTogleHandler}>
+            <Main
+            products={this.state.products} 
+            click={this.changeTogleHandler}
+            login={this.loginHandler}
+            >
                 {nullProduct}
             </Main>):null}
         </Container>
