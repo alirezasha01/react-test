@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import ProductList from "./components/ProductList/ProductList";
 import "./App.css"
 import Main from "./components/Main/Main";
-import Wrapper from "./components/hoc/Wrapper"
-import Container  from "./components/hoc/Container";
+import Wrapper from "./hoc/Wrapper"
+import Container  from "./hoc/Container";
+import Auth from "./context/Auth";
 class App extends React.Component {
     constructor(props){
         super(props)
@@ -66,7 +67,6 @@ loginHandler=()=>{
              products={this.state.products}
              delete={this.deleteStateHandler}
              change={this.ChangeValue}
-             isAuth={this.state.auth}
              />
              </div>
              
@@ -75,14 +75,15 @@ loginHandler=()=>{
     return (
         <Container>
         <button onClick={()=>{this.setState({ deleteEffect : false })}}>delete</button>
+        <Auth.Provider value={{auth:this.state.auth , login:this.loginHandler}}>
         {this.state.deleteEffect ? (
             <Main
             products={this.state.products} 
             click={this.changeTogleHandler}
-            login={this.loginHandler}
             >
                 {nullProduct}
             </Main>):null}
+        </Auth.Provider>
         </Container>
     )
     }
